@@ -23,7 +23,7 @@
         size: '2xl',
         actions: [
           {
-            label: 'Save',
+            label: 'Create',
             variant: 'solid',
             onClick(close) {
               console.log('creating new ...')
@@ -97,6 +97,8 @@ import { ref } from 'vue'
 import { createListResource } from 'frappe-ui'
 import { ListView, Dialog, FormControl} from 'frappe-ui'
 import { reactive } from 'vue'
+import { onKeyStroke } from '@vueuse/core'
+
 
 
 const createDialogShown = ref(false)
@@ -106,6 +108,10 @@ const newLink = reactive({
   destination_url: '',
   description: ''
 })
+
+onKeyStroke(['c', 'C']), () => {
+  createDialogShown.value =true;
+}
 
 const links = createListResource({
   doctype: "S Link",
