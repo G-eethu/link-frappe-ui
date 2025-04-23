@@ -8,6 +8,8 @@ app_license = "unlicense"
 # Apps
 # ------------------
 
+website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'},]
+
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
@@ -241,4 +243,5 @@ app_license = "unlicense"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
 
